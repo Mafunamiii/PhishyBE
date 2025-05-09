@@ -4,7 +4,8 @@ from app.modules.user.schemas.schemas import UserCreate
 from app.utils.logger import get_logger
 import bcrypt
 
-logger = get_logger("user-services.py")
+logger = get_logger(__name__)
+
 
 def create_user(db: Session, user_data: UserCreate):
     logger.info("Creating User")

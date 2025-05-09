@@ -1,13 +1,22 @@
 from fastapi import FastAPI
+from contextlib import asynccontextmanager
+
+from app.core.database_mongo import verify_mongo_connection
 from app.modules.user.routes.routes import router as user_router
 from app.utils.logger import get_logger
-from app.core.database import init_db
+from app.core.database_postgres import init_db, verify_postgres_connection
 
 logger = get_logger("main")
-app = FastAPI()
 
-@app.on_event("startup")
-def startup():
-    init_db()  # Ensure tables exist on startup
+@asynccontextmanager
+async def lifespan(app:FastAPI):
+    logger.info("Starting lifespan")
+    verify_postgres_connection()
+    verify_mongo_connection()
+    init_db()
 
+    logger.info("Finished establishing database connections")
+    yield
+
+app = FastAPI(lifespan=lifespan)
 app.include_router(user_router)

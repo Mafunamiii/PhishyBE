@@ -2,7 +2,7 @@ from sqlalchemy import Column, String, DateTime, Enum
 from sqlalchemy.dialects.postgresql import UUID
 from datetime import datetime
 import uuid
-from app.core.database import Base
+from app.core.database_postgres import Base
 from enum import Enum as PyEnum
 
 class AccountStatus(PyEnum):

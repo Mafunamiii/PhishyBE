@@ -1,12 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.core.database import get_db
+from app.core.database_postgres import get_db
 from app.modules.user.schemas.schemas import UserCreate, UserResponse
 from app.modules.user.services.services import create_user, get_user, get_all_users, update_user, delete_user
 from app.utils.logger import get_logger
 
 router = APIRouter(prefix="/users", tags=["users"])
-logger = get_logger("users-routes.py")
+logger = get_logger(__name__)
+
 @router.post("/", response_model=UserResponse)
 def create_new_user(user: UserCreate, db: Session = Depends(get_db)):
     logger.info("create new user")
