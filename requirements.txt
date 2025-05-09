@@ -1,0 +1,8 @@
+dotenv~=0.9.9
+python-dotenv~=1.1.0
+motor~=3.7.0
+SQLAlchemy~=2.0.40
+colorlog~=6.9.0
+fastapi~=0.115.12
+pydantic~=2.11.3
+bcrypt~=4.3.0
