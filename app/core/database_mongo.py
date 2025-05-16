@@ -4,6 +4,9 @@ from dotenv import load_dotenv
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from app.utils.logger import get_logger
+import logging  # standard logging module
+
+logging.getLogger("pymongo").setLevel(logging.WARNING)  # suppress DEBUG logs from pymongo
 
 load_dotenv()
 
@@ -33,3 +36,6 @@ def verify_mongo_connection():
     except Exception as e:
         logger.error(f"Failed to connect to MongoDB: {e}")
         raise
+
+def get_mongo_db():
+    return db

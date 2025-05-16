@@ -6,10 +6,10 @@ from app.modules.user.services.services import create_user, get_user, get_all_us
 from app.utils.logger import get_logger
 
 router = APIRouter(prefix="/users", tags=["users"])
-logger = get_logger(__name__)
-
+logger = get_logger("users-routes.py")
 @router.post("/", response_model=UserResponse)
 def create_new_user(user: UserCreate, db: Session = Depends(get_db)):
+    logger.info(f"GET_DB: {db}")
     logger.info("create new user")
     return create_user(db, user)
 

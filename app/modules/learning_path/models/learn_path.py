@@ -12,3 +12,28 @@ class SubtopicPriority(Enum):
     HIGH = auto()
     MODERATE = auto()
     LOW = auto()
+
+class Subtopic(Enum):
+    #SFB_T
+    SECVSNONSEC = "SECVSNONSEC"
+    HTTPVSHTTPS = "HTTPVSHTTPS"
+    BROWSERSECBP = "BROWSERSECBP"
+
+    # PS_T
+    COMMPASS = "COMMPASS"
+    PASSSTREN = "PASSSTREN"
+    MULTIFACT = "MULTIFACT"
+
+    # M_T
+    MALTYPE = "MALTYPE"
+    MALINFECT = "MALINFECT"
+
+    # SE_T
+    SOCENGTYPE = "SOCENGTYPE"
+    SOCENGDEF = "SOCENGDEF"
+
+    # IR_T
+    IRPROC = "IRPROC"
+    IRPREP = "IRPREP"
+    IRPOST = "IRPOST"
+    PIRPLAN = "PIRPLAN"

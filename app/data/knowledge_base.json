@@ -663,7 +663,79 @@
         ]
       }
     ]
-  }
+  },
+  {
+  "topic": "Incident Response",
+  "initial_assessment": [
+    {
+      "question_id": "incidentresponse-initassess-001",
+      "question": "What is the first step when a cybersecurity incident is detected?",
+      "choices": [
+        "Back up all data",
+        "Contact the media",
+        "Disconnect the affected device from the internet",
+        "Format the hard drive"
+      ],
+      "answer": "Disconnect the affected device from the internet"
+    },
+    {
+      "question_id": "incidentresponse-initassess-002",
+      "question": "Which of the following is considered a good preparation step before a cyber incident?",
+      "choices": [
+        "Ignore suspicious emails",
+        "Use weak passwords to avoid forgetting them",
+        "Maintain regular data backups and practice good cybersecurity",
+        "Only install free antivirus tools"
+      ],
+      "answer": "Maintain regular data backups and practice good cybersecurity"
+    },
+    {
+      "question_id": "incidentresponse-initassess-003",
+      "question": "What is the purpose of isolating the affected system during an incident?",
+      "choices": [
+        "To speed up the internet",
+        "To avoid malware updates",
+        "To prevent further spread or unauthorized access",
+        "To erase all user data"
+      ],
+      "answer": "To prevent further spread or unauthorized access"
+    },
+    {
+      "question_id": "incidentresponse-initassess-004",
+      "question": "What should a user do after a cyber incident has been resolved?",
+      "choices": [
+        "Reinstall all applications",
+        "Delete system logs",
+        "Identify what caused the incident and how to prevent it",
+        "Ignore the issue and move on"
+      ],
+      "answer": "Identify what caused the incident and how to prevent it"
+    },
+    {
+      "question_id": "incidentresponse-initassess-005",
+      "question": "Why is changing passwords important after an incident?",
+      "choices": [
+        "To make the system faster",
+        "To comply with antivirus policies",
+        "To prevent compromised credentials from being reused",
+        "To avoid CAPTCHA"
+      ],
+      "answer": "To prevent compromised credentials from being reused"
+    },
+    {
+      "question_id": "incidentresponse-initassess-006",
+      "question": "Why should even regular users have a personal incident response plan?",
+      "choices": [
+        "To create more passwords",
+        "To act quickly and correctly during an incident",
+        "To help their internet provider",
+        "To get faster Wi-Fi"
+      ],
+      "answer": "To act quickly and correctly during an incident"
+    }
+  ]
+}
+
 
 
 

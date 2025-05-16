@@ -4,15 +4,16 @@ from app.modules.user.schemas.schemas import UserCreate
 from app.utils.logger import get_logger
 import bcrypt
 
-logger = get_logger(__name__)
-
+logger = get_logger("user-services.py")
 
 def create_user(db: Session, user_data: UserCreate):
     logger.info("Creating User")
     hashed_password = bcrypt.hashpw(user_data.password.encode(), bcrypt.gensalt()).decode()
     new_user = User(username=user_data.username, email=user_data.email, password=hashed_password)
     db.add(new_user)
+    logger.info("User Created, committing..")
     db.commit()
+    logger.info("User Created, refreshing...")
     db.refresh(new_user)
     logger.info(f"User created: {new_user.username}")
     return new_user
