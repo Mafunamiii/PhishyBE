@@ -9,9 +9,9 @@ class Topics(Enum):
     IR_T = "Incident Response"
 
 class SubtopicPriority(Enum):
-    HIGH = auto()
-    MODERATE = auto()
-    LOW = auto()
+    HIGH = "HIGH"
+    MODERATE = "MODERATE"
+    LOW = "LOW"
 
 class Subtopic(Enum):
     #SFB_T

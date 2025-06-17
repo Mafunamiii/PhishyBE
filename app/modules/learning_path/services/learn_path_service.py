@@ -1,12 +1,20 @@
 # takes in the topic value, the grades in a list format
-
+from app.interfaces.learning import LearningEvaluator
 from app.modules.learning_path.models.learn_path import Topics, SubtopicPriority
 from app.modules.game.models.game import QuestionRequest
 import json
+from uuid import UUID
 
 from app.utils.logger import get_logger
 
 logger = get_logger()
+
+class DefaultLearningEvaluator(LearningEvaluator):
+    def evaluate_answer(self, answer, question_map):
+        return evaluate_answer(answer, question_map)
+
+    def build_question_map(self, *files):
+        return build_question_map(*files)
 
 def score_to_priority(score: float) -> SubtopicPriority:
     if 0 <= score <= 0.45:
@@ -60,4 +68,5 @@ def evaluate_answer(answer: QuestionRequest, question_map):
             return False
     else:
         return "Invalid answer"
+
 
