@@ -15,3 +15,10 @@ class InitialAssessmentResponse(BaseModel):
     inserted_id: str
     timestamp: datetime
     userid: UUID
+
+class GetUser(BaseModel):
+    userid: UUID
+    collectionName: str
+
+class GetUserTopic(GetUser):
+    topic: Topics
